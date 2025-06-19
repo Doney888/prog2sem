@@ -7,9 +7,9 @@ lock = threading.Lock()
 def safe_increment():
     """Функция имитирует работу функции и безопасно увеличивает глобальную переменную counter"""
     global counter
+    time.sleep(0.001)
     with lock:
         current_value = counter
-        time.sleep(0.001)
         counter = current_value + 1
 
 
